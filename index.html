@@ -5,40 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Develop/assets/style.css">
-    <title>Document</title>
+    <title>Weather</title>
 </head>
 <body>
     <header class="dashboard">
         <h1>Weather Dashboard</h1>
     </header>
-    <div class="container">
-        <section class="citysearch">
-            <h2>Search for a City</h2>
-            <form>
-                <input type="text">
-            </form>
-            <button>Search</button>
-            <section class="cityHistory">
+    <div class="flex-container">
+        <div class="flex-item1">
+            <section class="citysearch">
+                
+                <form action="" method="GET" id="form">
+                    <div>
+                        <label for="city"><h2>Search for a City</h2></label>
+                        <input type="text" id="city" name="search" placeholder="City" value="">
+                    </div>
 
+                    <div>
+                        <button type="submit" id="searchBtn">Search</button>
+                    </div>
+                </form>
+
+                <section class="cityHistory">
+                    <h2>Cities Searched</h2>
+                    <button id="city1"></button>
+                    <button id="city2"></button>
+                    <button id="city3"></button>
+
+
+                </section>
             </section>
-        </section>
+        </div>
 
-        <section class="currentday">
-            <h2>Atlanta</h2>
-        </section>
+        <div class="flex-item2">
+            <section class="currentCity">
+            <h1>City:</h1>
+            </section>
+            <div class="forecast" id="cityDisplay">
+                <div class="days">
+                    <h3><div id="day0"></div></h3>
+                    <div id="weather0"></div>
+                    <div id="temp0"></div>
+                    <div id="wind0"></div>
+                    <div id="humidity0"></div>
+                    <div id="uvIndex"></div>
+                </div>
+            </div>
 
-        <section class="forecast">
-            <div class="forecast" id="day1">1</div>
-            <div class="forecast" id="day2">2</div>
-            <div class="forecast" id="day3">3</div>
-            <div class="forecast" id="day4">4</div>
-            <div class="forecast" id="day5">5</div>
-        </section>
+            <h2 class="subtitle">5-Day Forecast:</h2>
+            <section class="forecast">
+                <div class="days">
+                    <h3><div id="day1"></div></h3>
+                    <div id="weather1"></div>
+                    <div id="temp1"></div>
+                    <div id="wind1"></div>
+                    <div id="humidity1"></div>
+                </div>
+                <div class="days">
+                    <h3><div id="day2"></div></h3>
+                    <div id="weather2"></div>
+                    <div id="temp2"></div>
+                    <div id="wind2"></div>
+                    <div id="humidity2"></div>
+                </div>
+                <div class="days">
+                    <h3><div id="day3"></div></h3>
+                    <div id="weather3"></div>
+                    <div id="temp3"></div>
+                    <div id="wind3"></div>
+                    <div id="humidity3"></div>
+                </div>
+                <div class="days">
+                    <h3><div id="day4"></div></h3>
+                    <div id="weather4"></div>
+                    <div id="temp4"></div>
+                    <div id="wind4"></div>
+                    <div id="humidity4"></div>
+                </div>
+                <div class="days">
+                    <h3><div id="day5"></div></h3>
+                    <div id="weather5"></div>
+                    <div id="temp5"></div>
+                    <div id="wind5"></div>
+                    <div id="humidity5"></div>
+                </div>
+            </section>
+        </div>
     </div>
 </body>
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 <script src="./Develop/assets/config.js"></script>
 <script src="./Develop/assets/script.js"></script>
 </html>
