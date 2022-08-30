@@ -78,7 +78,7 @@ function showResponse(event){
     event.preventDefault();
 
     var city = document.getElementById('city')
-    getCoordinates = `http://api.openweathermap.org/geo/1.0/direct?q=${city.value}&limit=5&appid=${api.key}`
+    getCoordinates = `https://api.openweathermap.org/geo/1.0/direct?q=${city.value}&limit=5&appid=${api.key}`
     console.log(getCoordinates)
 
     console.log(city.value)
