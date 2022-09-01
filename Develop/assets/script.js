@@ -27,44 +27,46 @@ var uvIndex = []
 var weatherSource = []
 
 // day
-var day0 = document.querySelector('#day0')
-var day1 = document.querySelector('#day1')
-var day2 = document.querySelector('#day2')
-var day3 = document.querySelector('#day3')
-var day4 = document.querySelector('#day4')
-var day5 = document.querySelector('#day5')
+
+// var day1 = document.querySelector('#day1')
+// var day2 = document.querySelector('#day2')
+// var day3 = document.querySelector('#day3')
+// var day4 = document.querySelector('#day4')
+// var day5 = document.querySelector('#day5')
 
 // temperature
-var temp0 = document.querySelector('#temp0')
-var temp1 = document.querySelector('#temp1')
-var temp2 = document.querySelector('#temp2')
-var temp3 = document.querySelector('#temp3')
-var temp4 = document.querySelector('#temp4')
-var temp5 = document.querySelector('#temp5')
-// wind
-var wind0 = document.querySelector('#wind0')
-var wind1 = document.querySelector('#wind1')
-var wind2 = document.querySelector('#wind2')
-var wind3 = document.querySelector('#wind3')
-var wind4 = document.querySelector('#wind4')
-var wind5 = document.querySelector('#wind5')
-// humidity
-var humidity0 = document.getElementById('humidity0')
-var humidity1 = document.getElementById('humidity1')
-var humidity2 = document.getElementById('humidity2')
-var humidity3 = document.getElementById('humidity3')
-var humidity4 = document.getElementById('humidity4')
-var humidity5 = document.getElementById('humidity5')
+// var temp0 = document.querySelector('#temp0')
+// var temp1 = document.querySelector('#temp1')
+// var temp2 = document.querySelector('#temp2')
+// var temp3 = document.querySelector('#temp3')
+// var temp4 = document.querySelector('#temp4')
+// var temp5 = document.querySelector('#temp5')
+
+// // wind
+// var wind0 = document.querySelector('#wind0')
+// var wind1 = document.querySelector('#wind1')
+// var wind2 = document.querySelector('#wind2')
+// var wind3 = document.querySelector('#wind3')
+// var wind4 = document.querySelector('#wind4')
+// var wind5 = document.querySelector('#wind5')
+
+// // humidity
+// var humidity0 = document.getElementById('humidity0')
+// var humidity1 = document.getElementById('humidity1')
+// var humidity2 = document.getElementById('humidity2')
+// var humidity3 = document.getElementById('humidity3')
+// var humidity4 = document.getElementById('humidity4')
+// var humidity5 = document.getElementById('humidity5')
 // UV Index
 var uvIndex0 = document.getElementById('uvIndex')
 
-// weather images
-var weather0 = document.getElementById('weather0')
-var weather1 = document.getElementById('weather1')
-var weather2 = document.getElementById('weather2')
-var weather3 = document.getElementById('weather3')
-var weather4 = document.getElementById('weather4')
-var weather5 = document.getElementById('weather5')
+// // weather images
+// var weather0 = document.getElementById('weather0')
+// var weather1 = document.getElementById('weather1')
+// var weather2 = document.getElementById('weather2')
+// var weather3 = document.getElementById('weather3')
+// var weather4 = document.getElementById('weather4')
+// var weather5 = document.getElementById('weather5')
 
 console.log(city.value)
 
@@ -153,32 +155,24 @@ function getWeather(){
 
             console.log(temp);
     // assigning temperature to variables at the top linked to html ids
-            temp0.textContent = `Temp: ${temp[0]}F` 
-            temp1.textContent = `Temp: ${temp[1]}F` 
-            temp2.textContent = `Temp: ${temp[2]}F` 
-            temp3.textContent = `Temp: ${temp[3]}F` 
-            temp4.textContent = `Temp: ${temp[4]}F` 
-            temp5.textContent = `Temp: ${temp[5]}F` 
+        var tempArr = [temp0, temp1, temp2, temp3, temp4, temp5]
+            for(let i = 0; i <= tempArr.length - 1; i++){
+                tempArr[i].textContent = `Temp: ${temp[i]}F` 
+            }
 
             console.log(windspeed);
     // assigning windspeed to variables at the top linked to html ids
-            wind0.textContent = `Wind: ${windspeed[0]}mph` 
-            wind1.textContent = `Wind: ${windspeed[1]}mph` 
-            wind2.textContent = `Wind: ${windspeed[2]}mph` 
-            wind3.textContent = `Wind: ${windspeed[3]}mph` 
-            wind4.textContent = `Wind: ${windspeed[4]}mph` 
-            wind5.textContent = `Wind: ${windspeed[5]}mph`
+        var windArr= [wind0, wind1, wind2, wind3, wind4, wind5]
+            for(let i = 0; i <= windArr.length - 1; i++){
+                windArr[i].textContent = `Wind: ${windspeed[i]}mph` 
+            }
     
     // assigning windspeed to variables at the top linked to html ids
-            humidity0.textContent = `Humidity: ${humidity[0]}%`
-            humidity1.textContent = `Humidity: ${humidity[1]}%`
-            humidity2.textContent = `Humidity: ${humidity[2]}%`
-            humidity3.textContent = `Humidity: ${humidity[3]}%`
-            humidity4.textContent = `Humidity: ${humidity[4]}%`
-            humidity5.textContent = `Humidity: ${humidity[5]}%`
-        //     for(i = 0; i <= 5; i++){
-        //     humidity[i].textContent = `Humidity: ${humidity[i]}%`
-        //     }
+        var humidityArr = [humidity0, humidity1, humidity2, humidity3, humidity4, humidity5];
+            for(let i = 0; i <= humidityArr.length - 1; i++){
+                humidityArr[i].textContent = `Humidity: ${humidity[i]}%`
+            }
+
     // UV index of current day
             uvIndex0.textContent = `UV-Index: ${uvIndex}`
             console.log(uvIndex)
@@ -190,64 +184,25 @@ function getWeather(){
 
 }
 
+var dayArr = [day1, day2, day3, day4, day5]
 function getTime(){
-    day0.textContent = moment().format('MMMM Do YYYY');
-    day1.textContent = moment().add(1, 'days').format('MMMM Do YYYY');
-    day2.textContent = moment().add(2, 'days').format('MMMM Do YYYY'); 
-    day3.textContent = moment().add(3, 'days').format('MMMM Do YYYY'); 
-    day4.textContent = moment().add(4, 'days').format('MMMM Do YYYY');
-    day5.textContent = moment().add(5, 'days').format('MMMM Do YYYY');
+    for(let i = 0; i <= dayArr.length - 1; i++){
+        day0.textContent = moment().format('MMMM Do YYYY');
+        dayArr[i].textContent = moment().add(i + 1, 'days').format('MMMM Do YYYY');
+    }
 };
 
+var weatherArr = [weather0, weather1, weather2, weather3, weather4, weather5]
 function weatherIcon(){
-// current day
-    if(weatherSource[0]== 'Clouds'){
-        weather0.textContent = '⛅'
-    }else if(weatherSource[0]== 'Rain'){
-        weather0.textContent = '🌦️'
-    }else if(weatherSource[0]== 'Clear'){
-        weather0.textContent = '🌞'
-    }
-// day1
-    if(weatherSource[1]== 'Clouds'){
-        weather1.textContent = '⛅'
-    }else if(weatherSource[1]== 'Rain'){
-        weather1.textContent = '🌦️'
-    }else if(weatherSource[1]== 'Clear'){
-        weather1.textContent = '🌞'
-    }
-// day2
-    if(weatherSource[2]== 'Clouds'){
-        weather2.textContent = '⛅'
-    }else if(weatherSource[2]== 'Rain'){
-        weather2.textContent = '🌦️'
-    }else if(weatherSource[2]== 'Clear'){
-        weather2.textContent = '🌞'
-    }
-// day3
-    if(weatherSource[3]== 'Clouds'){
-        weather3.textContent = '⛅'
-    }else if(weatherSource[3]== 'Rain'){
-        weather3.textContent = '🌦️'
-    }else if(weatherSource[3]== 'Clear'){
-        weather3.textContent = '🌞'
-    }
-// day4
-    if(weatherSource[4]== 'Clouds'){
-        weather4.textContent = '⛅'
-    }else if(weatherSource[4]== 'Rain'){
-        weather4.textContent = '🌦️'
-    }else if(weatherSource[4]== 'Clear'){
-        weather4.textContent = '🌞'
-    }
-// day5
-    if(weatherSource[5]== 'Clouds'){
-        weather5.textContent = '⛅'
-    }else if(weatherSource[5]== 'Rain'){
-        weather5.textContent = '🌦️'
-    }else if(weatherSource[5]== 'Clear'){
-        weather5.textContent = '🌞'
-    }
+    for(let i = 0; i <= weatherArr.length - 1; i++){
+        if(weatherSource[i]== 'Clouds'){
+            weatherArr[i].textContent = '⛅'
+        }else if(weatherSource[i]== 'Rain'){
+            weatherArr[i].textContent = '🌦️'
+        }else if(weatherSource[i]== 'Clear'){
+            weatherArr[i].textContent = '🌞'
+        }
+}
 
 };
 
