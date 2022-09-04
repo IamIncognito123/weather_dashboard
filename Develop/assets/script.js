@@ -26,15 +26,6 @@ var humidity = []
 var uvIndex = []
 var weatherSource = []
 
-// day
-
-// var day1 = document.querySelector('#day1')
-// var day2 = document.querySelector('#day2')
-// var day3 = document.querySelector('#day3')
-// var day4 = document.querySelector('#day4')
-// var day5 = document.querySelector('#day5')
-
-// temperature
 // var temp0 = document.querySelector('#temp0')
 // var temp1 = document.querySelector('#temp1')
 // var temp2 = document.querySelector('#temp2')
@@ -42,31 +33,7 @@ var weatherSource = []
 // var temp4 = document.querySelector('#temp4')
 // var temp5 = document.querySelector('#temp5')
 
-// // wind
-// var wind0 = document.querySelector('#wind0')
-// var wind1 = document.querySelector('#wind1')
-// var wind2 = document.querySelector('#wind2')
-// var wind3 = document.querySelector('#wind3')
-// var wind4 = document.querySelector('#wind4')
-// var wind5 = document.querySelector('#wind5')
-
-// // humidity
-// var humidity0 = document.getElementById('humidity0')
-// var humidity1 = document.getElementById('humidity1')
-// var humidity2 = document.getElementById('humidity2')
-// var humidity3 = document.getElementById('humidity3')
-// var humidity4 = document.getElementById('humidity4')
-// var humidity5 = document.getElementById('humidity5')
-// UV Index
 var uvIndex0 = document.getElementById('uvIndex')
-
-// // weather images
-// var weather0 = document.getElementById('weather0')
-// var weather1 = document.getElementById('weather1')
-// var weather2 = document.getElementById('weather2')
-// var weather3 = document.getElementById('weather3')
-// var weather4 = document.getElementById('weather4')
-// var weather5 = document.getElementById('weather5')
 
 console.log(city.value)
 
@@ -211,20 +178,23 @@ city1.addEventListener('click', displayCity1)
 city2.addEventListener('click', displayCity2)
 city3.addEventListener('click', displayCity3)
 function displayCity1(){
-    getCoordinates = `http://api.openweathermap.org/geo/1.0/direct?q=${savedCities[0]}&limit=5&appid=${api.key}`
+    getCoordinates = `https://api.openweathermap.org/geo/1.0/direct?q=${savedCities[0]}&limit=5&appid=${api.key}`
     newEl.textContent = savedCities[0];
     currentCity.appendChild(newEl);
     getCity();
+
 }
 function displayCity2(){
-    getCoordinates = `http://api.openweathermap.org/geo/1.0/direct?q=${savedCities[1]}&limit=5&appid=${api.key}`
+    getCoordinates = `https://api.openweathermap.org/geo/1.0/direct?q=${savedCities[1]}&limit=5&appid=${api.key}`
     newEl.textContent = savedCities[1];
     currentCity.appendChild(newEl);
     getCity();
+
 }
 function displayCity3(){
-    getCoordinates = `http://api.openweathermap.org/geo/1.0/direct?q=${savedCities[2]}&limit=5&appid=${api.key}`
+    getCoordinates = `https://api.openweathermap.org/geo/1.0/direct?q=${savedCities[2]}&limit=5&appid=${api.key}`
     newEl.textContent = savedCities[2];
     currentCity.appendChild(newEl);
     getCity();
+
 }
